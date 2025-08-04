@@ -1,6 +1,6 @@
 # Title Message
 # <type>(<scope>): <subject>
-# ex) solved(SWEA1001): A+B 문제 풀이
+# ex) solved(SWEA1001 / D2): A+B 문제 풀이
 # -> 50자 이내, 마침표 없이 작성 (명령문 형태 권장)
 
 # --- COMMIT END ---
