@@ -20,6 +20,7 @@
 
 ### 3. 커밋 템플릿을 적용하기
 - 커밋 템플릿을 적용하는 부분은 `global`과 `local`로 크게 두 가지로 나뉩니다.
+- 우리는 스터디 레포에서만 커밋 컨벤션을 적용할 것이기  때문에 2번(local)을 적용
     1. `global` -> 로컬에서 커밋하는 모든 커밋 메세지에 템플릿 적용
         - `git config --global commit.template .gitmessage.txt`
     2. `local` -> 해당 프로젝트에만 커밋 메세지 템플릿을 적용
