@@ -43,8 +43,8 @@
 2. git clone 후 본인 이름으로 폴더 생성
 3. 본인 폴더 생성 후 해당 폴더에 코드 작성
    - 폴더 생성 규칙(예시)
-     - 언어 1개: 이름/swea, 이름/boj
-     - 언어 2개: 이름/swea/python , 이름/boj/python
+     - 언어 1개: 이름/SWEA, 이름/BOJ
+     - 언어 2개: 이름/SWEA/PYTHON , 이름/BOJ/PYTHON
    - 파일 이름은 swea1001.py 형식을 유지
 4. 알고리즘 문제 해결 후 주 2회(화,목) PR 생성
    - Commit Message 예시
