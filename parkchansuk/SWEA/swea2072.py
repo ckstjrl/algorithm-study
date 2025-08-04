@@ -6,4 +6,4 @@ for i in range(1, T):
     for j in arr : # j 에서 arr 값 하나씩 뽑아서 순회
         if j % 2 == 1: # j가 홀수이면 sum_odd에 누적 합 
             sum_odd += j
-    print('#'+str(i), sum_odd) # 값 출력
+    print('#'+str(i), sum_odd) # 값 출력 
