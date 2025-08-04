@@ -42,6 +42,7 @@
 1. repository fork
 2. git clone 후 본인 이름으로 폴더 생성
 3. 본인 폴더 생성 후 해당 폴더에 코드 작성
+   - 파일 이름은 SWEA1001.py 형식을 유지
 4. 알고리즘 문제 해결 후 주 2회(화,목) PR 생성
    - Commit Message 예시
      - ex) solved(SWEA1001): A+B 문제 풀이
