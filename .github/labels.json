@@ -1,0 +1,52 @@
+[
+    {
+        "name": "⚙ Setting",
+        "color": "DADDE4",
+        "description": "개발 환경 세팅"
+    },
+    {
+        "name": "✨ D1/SWEA",
+        "color": "57498F",
+        "description": "SWEA D1 문제 풀이"
+    },
+    {
+        "name": "🌏 D2/SWEA",
+        "color": "1396E5",
+        "description": "SWEA D2 문제 풀이"
+    },
+    {
+        "name": "🔥 D3/SWEA",
+        "color": "C7C4FF",
+        "description": "SWEA D3 문제 풀이"
+    },
+    {
+        "name": "🎨 BOJ",
+        "color": "FFF8E7",
+        "description": "BOJ 문제 풀이"
+    },
+    {
+        "name": "💻 Python",
+        "color": "FFDAB9",
+        "description": "Python 사용"
+    },
+    {
+        "name": "🐞 C/C++",
+        "color": "FF1414",
+        "description": "C/C++ 사용"
+    },
+    {
+        "name": "📃 JAVA",
+        "color": "2F2C2C", 
+        "description": "JAVA 사용"
+    },
+    {
+        "name": "🙋‍♂️ Question",
+        "color": "2DB400", 
+        "description": "질문 있어요"
+    },
+    {
+        "name": "🗑️ Deprecated",
+        "color": "F5FFFA",
+        "description": "이제 더 이상 필요 없어요"
+    }
+]
