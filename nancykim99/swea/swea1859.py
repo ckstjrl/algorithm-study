@@ -19,7 +19,7 @@ for tc in range(1, T+1):
         if a < list_of_num[i]: # 만약 [0] 보다 큰 경우
             a = list_of_num[i] # a에 추가
             b += 1 # 인덱스를 알아내기 위해 1 추가
-        elif a >= list_of_num[i]: # 만약 a보다 다음 숫자가 큰 경우
+        elif a >= list_of_num[i]: # 만약 a보다 다음 숫자가 큰 경우 => 여기 질문!!!
             for i in range(b): 
                 c += [list_of_num[b] - list_of_num[i]] # 차들을 c리스트에 추가
                 d += 1
