@@ -5,6 +5,7 @@
 # P개의 버스 정류장에 대해 각 정류장에 몇 개의 버스 노선이 다니는지 구하는 프로그램을 작성하라.
 
 # 해결 방법 : 카운팅 배열을 사용하여 각 정류장마다 지나는 노선 수를 기록
+# 다시 풀어봐야 함!!!
 
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
@@ -27,8 +28,10 @@ for test_case in range(1, T + 1):
         # int(input()) : 정류장 번호 입력받음
         # arr[~] : 입력받은 정류장의 노선 개수 arr 배열에서 조회
     
-    result = ''.join(new_arr)
+    result = ' '.join(new_arr)
     print(f'#{test_case} {result}')
+
+# fail (1) : ' '.join(new_arr) -> '' 사이에 공백을 안 줌
 
     
 
