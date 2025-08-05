@@ -8,11 +8,11 @@
 예를 들어 3일 동안의 매매가가 1, 2, 3 이라면 처음 두 날에 원료를 구매하여 마지막 날에 팔면 3의 이익을 얻을 수 있다.
 -> N일 동안 가장 작은 매매가를 기록하는 구매보다 판매 수익이 더 클 때 판다!
 --> 1일 : 1로 1개 구매 -> 2일: 2로 1개 구매 -> 3일 :2개를 팖
-내 잔액은 0으로 설정
-내 물건은 0으로 설정
 
 3일 동안의 판매가가 가장 낮은 지점을 찾음
-3일 동안의 판매가가 가장 높은 지점이 첫 인덱스일 경우 -> 0 반환
+
+3일 동안의 판매가가 가장 높은 지점이 첫 인덱스일 경우
+가장 높은 지점이 하나일 경우 -> 0 반환
 -- 아닐 경우
 나보다 낮은 값 찾기
 1.1. 나보다 낮으면 -> 판다
@@ -37,6 +37,35 @@ arr를 순회하면서 내 다음 값과 비교하면서 wallet과 inventory에 
 2번째 케이스는 1,2일에 각각 한 개씩 사서 세 번째 날에 두 개를 팔면 10의 이익을 얻을 수 있다.
 """
 
+"""
+5트
+"""
+
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    # 지각의 초기값 설정
+    wallet = 0
+    # price 초기값을 맨 마지막 값으로 설정
+    price = arr[-1]
+
+    # 뒤에서부터 순회
+
+    for idx in range(N-1, -1, -1) :
+        # 현재의 값이 가장 비싼 가격보다 작을 경우
+        if arr[idx] == price :
+            pass
+        elif arr[idx] < price :
+            # wallet에 (시가 - (idx-1 시점의 구매가))를 더하기
+            wallet += (price-arr[idx])
+        # 만약 클 경우
+        elif arr[idx] > price   :
+            # 판매가 재설정
+            price = arr[idx]
+
+    print(f'#{test_case} {wallet}')
 
 
 
@@ -46,32 +75,34 @@ arr를 순회하면서 내 다음 값과 비교하면서 wallet과 inventory에 
 
 """
 
-# T = int(input())
-T = 1
-for test_case in range(1, T + 1):
-    # N = int(input())
-    N = 5
-    # arr = list(map(int, input().split()))
-    arr = [10, 2, 2, 2, 10]
+# # T = int(input())
+# T = 1
+# for test_case in range(1, T + 1):
+#     # N = int(input())
+#     N = 5
+#     # arr = list(map(int, input().split()))
+#     # 중간에 8일 때 판다면 최대 이득이 아님!! 가격이 최대일 때 팔아야 댐!!!
+#     arr = [10, 2, 8, 2, 10]
 
-    if (arr[0] == max(arr)) and  (arr.count(max(arr)) == 1):
-        wallet = 0
-    else :
-        wallet = 0
-        # price 초기값을 맨 마지막 값으로 설정
-        price = arr[-1]
-        # 뒤에서부터 순회
-        for idx in range(N-1, -1, -1) :
-            # 맨 뒤의 값이 바로 전 값보다 크거나 같을 경우
-            if arr[idx] >= arr[idx-1] :
-                # wallet에 (시가 - (idx-1 시점의 구매가))를 더하기
-                wallet += (price-arr[idx-1])
-            # 만약 클 경우
-            elif arr[idx] < arr[idx-1]   :
-                # 판매가 재설정
-                price = arr[idx-1]
+#     # if (arr[0] == max(arr)) and  (arr.count(arr[0]) == 1):
+#     #     wallet = 0
+#     # else :
+#     wallet = 0
+#     # price 초기값을 맨 마지막 값으로 설정
+#     max_price = arr[-1]
+#     # price = arr[-1]
+#     # 뒤에서부터 순회
+#     for idx in range(N-1, -1, -1) :
+#         # 현재의 값이 가장 비싼 가격보다 작을 경우
+#         if arr[idx] < max_price :
+#             # wallet에 (시가 - (idx-1 시점의 구매가))를 더하기
+#             wallet += (max_price-arr[idx])
+#         # 만약 클 경우
+#         elif arr[idx] > max_price   :
+#             # 판매가 재설정
+#             max_price = arr[idx-1]
 
-    print(f'#{test_case} {wallet}')
+#     print(f'#{test_case} {wallet}')
 
 
 """
