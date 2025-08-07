@@ -24,33 +24,74 @@ if x == N-1 :
 # N = int(input())
 N = 3
 arr = [[0] * N for _ in range(N)]
-idx = 3
-x = 2
+idx = N
+x = N-1
 y = 0
 
 arr[0] = [i+1 for i in range(N)]
 
+  
 
-if x == N-1 :
-    for y_1 in range(1, N) :
-        idx += 1
-        arr[y_1][x] = idx
-        if y_1 == N-1 :
-            for x_1 in range(N-2, -1, -1) :
-                idx += 1
-                arr[y_1][x_1] = idx
-                if x_1 == 0 :
-                    for x_2 in range(0, N-1) :
-                        idx += 1
-                        arr[y_1-1][x_1] = idx
-                    break
-                    
-                
-            
+def func(idx, arr, x, y) :
+    if x == N//2 + 1 and  y == N//2 + 1 :
+        return arr
+    di = [0, -1, 0, 1] # 우 하 좌 상
+    dj = [1, 0, -1, 0] 
+    # 조건 걸어서 방향 설정 
+    # x == N-1, y == N-1
+    # -> 왼쪽으로
+    if x == N-1 and y == N-1 : ## N 이 변동값이 아님
+        x += di[2]
+        y += dj[2]
+    # x == N-1, y == 0
+    # -> 위로
+    elif x == N-1 and y == 0 :
+        x += di[3]
+        y += dj[3]
         
+    # x == 0, y==N-1
+    # -> 아래로
+    elif y == N-1 :
+        
+        x += di[1]
+        y += dj[1]
     
+    # x == 0, y == 0
+    # -> 오른쪽으로
+    elif y >= 0 :
+        x += di[0]
+        y += dj[0]
 
-    print(arr)  
+    idx += 1
+    arr[x][y] = idx
+    
+    return func(idx, arr, x, y)
+
+func(idx, arr, 1, 1)
+
+
+
+                    
+
+
+
+print(arr)  
+
+
+
+# if x == N-1 :
+#     for y_1 in range(1, N) :
+#         idx += 1
+#         arr[y_1][x] = idx
+#         if y_1 == N-1 :
+#             for x_1 in range(N-2, -1, -1) :
+#                 idx += 1
+#                 arr[y_1][x_1] = idx
+#                 if x_1 == 0 :
+#                     for x_2 in range(0, N-1) :
+#                         idx += 1
+#                         arr[y_1-1][x_1] = idx
+#                     break
 
 
 # for y in range(0, N) :
