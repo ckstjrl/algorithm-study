@@ -9,3 +9,11 @@ for tc in range(1, T+1):
 
     #print를 하는 동시에 라스트의 가장 마지막 수를 출력
     print(f'#{tc} {arr[-1]}')
+
+#max를 쓴 풀이
+# T = int(input())
+
+# for tc in range(1, T+1):
+#     arr = list(map(int, input().split()))
+#     ans = max(arr)
+#     print(ans)
