@@ -58,7 +58,7 @@ for test_case in range(1, T + 1):
         if arr[idx] == price :
             pass
         elif arr[idx] < price :
-            # wallet에 (시가 - (idx-1 시점의 구매가))를 더하기
+            # wallet에 (시가 - (idx 시점의 구매가))를 더하기
             wallet += (price-arr[idx])
         # 만약 클 경우
         elif arr[idx] > price   :
