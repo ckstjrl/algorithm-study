@@ -1,27 +1,28 @@
-T = int(input()) # 테스트 케이스
+# T = int(input())
+
+T = 1
+N = 10
+K = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+def selection_sort(a, N) :
+
+	for i in range(N-1) : # 정렬 구간의 시작 인덱스
+		min_idx = i # 첫 원소를 최소로 가정
+		for j in range(i+1, N) :
+			if a[min_idx]> a[j] : # 최소 원소 위치 갱신
+				min_idx = j
+		a[i], a[min_idx] = a[min_idx], a[i] # 구간 최솟값을 구간 맨 앞으로
 
 for tc in range(1, T+1):
-    N = int(input())
-    ai = list(map(int, input())) #여백이 없기 때문에, split이 필요 없음
+    # N = int(input())
+    # arr = list(map(int, input().split()))
 
-    COUNTS = [0] * 101 # 100까지
+    arr = selection_sort(arr,N)
 
-    for i in range(N): # ai[i]의 발생 횟수 기록
-        COUNTS[ai[i]] += 1
+    arr_2 = []
 
-    a = 0
-    for i in range(10):  # COUNTS의 가장 많은 카드의 장 수
-        if a <= COUNTS[i]: # 가장 크거나 같은 경우 더하기 -> 가장 큰 수이자 많은 카드 숫자를 찾기 위해
-            a = COUNTS[i]
+    for i in range(N):
+        arr_2.append(arr.pop([0]))
+        arr_2.append(arr.pop([-1]))
 
-    b = -1
-    for i in range(10): # 인덱스를 통해 숫자 찾기
-        if COUNTS[i] == a:
-            b = i
-
-    print(f'#{tc}', b, a)
-
-
-# 카운팅 정렬의 모든 부분을 쓰는게 아니라 COUNTS의 발생 횟수만 찾는 부분만 사용해서 당황했었음
-# 인덱스를 통해 값 찾는게 아직 안 익숙해서 익숙해져야겠음
-# 가장 많은 카드의 장 수가 1일 때가 아니라 같을 때 어떻게 할지 고민해야할 듯
+    print(arr_2)
