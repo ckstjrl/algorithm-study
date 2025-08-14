@@ -1,3 +1,5 @@
+# 1979. 어디에 단어가 들어갈 수 있을까 (D2)
+
 T = int(input())
  
 for tc in range(1, T+1):
@@ -16,7 +18,6 @@ for tc in range(1, T+1):
                 cnt = 0
             if cnt == K and (j == N-1 or arr[i][j+1] == 0):     # 1의 개수가 K이고, 칸의 위치가 행(열)의 마지막이거나 다음칸의 값이 0이면 자리 수 증가
                 result += 1
-        # print('col:', result)
  
     # 열 우선 순회
     for j in range(N):
@@ -28,6 +29,5 @@ for tc in range(1, T+1):
                 cnt = 0
             if cnt == K and (i == N-1 or arr[i+1][j] == 0):
                 result += 1
-        # print('row:', result)
  
     print(f'#{tc} {result}')
