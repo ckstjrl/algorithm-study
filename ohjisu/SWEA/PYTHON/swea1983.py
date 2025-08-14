@@ -38,10 +38,47 @@ K 번째 학생의 학점을 출력하는 프로그램을 작성하라.
 
 
 """
+"""
+1. Use if-else
+"""
+T = int(input())
 
+for tc in range(1, T+1) :
+    N, K = map(int, input().split())
+
+    test_arr = [list(map(int, input().split())) for _ in range(N)]
+    result_arr = [[0] for _ in range(N)]
+
+    for idx in range(N) :
+        result_arr[idx] = test_arr[idx][0] * 35 +  test_arr[idx][1] * 45 +  test_arr[idx][2] * 20 
+    
+
+    grade_arr = sorted(result_arr, reverse=True)
+    grade = grade_arr.index(result_arr[K-1]) + 1
+    if grade <= N//10 :
+        result = 'A+'
+    elif grade <= (N//10)*2   :
+        result = 'A0'
+    elif grade <= (N//10)*3 :
+        result = 'A-'
+    elif grade <= (N//10)*4 :
+        result = 'B+'
+    elif grade <= (N//10)*5 :
+        result = 'B0'
+    elif grade <= (N//10)*6 :
+        result = 'B-'
+    elif grade <= (N//10)*7 :
+        result = 'C+'
+    elif grade <= (N//10)*8 :
+        result = 'C0'
+    elif grade <= (N//10)*9 :
+        result = 'C-'
+    else :
+        result = 'D0'
+    print(f'#{tc} {result}')
 
 """
-1. use dictionary
+2. Use dictionary
 """
 
 T = int(input())
@@ -80,41 +117,3 @@ for tc in range(1, T+1) :
     print(f'#{tc} {result}')
 
 
-"""
-Use if-else
-"""
-T = int(input())
-
-for tc in range(1, T+1) :
-    N, K = map(int, input().split())
-
-    test_arr = [list(map(int, input().split())) for _ in range(N)]
-    result_arr = [[0] for _ in range(N)]
-
-    for idx in range(N) :
-        result_arr[idx] = test_arr[idx][0] * 35 +  test_arr[idx][1] * 45 +  test_arr[idx][2] * 20 
-    
-
-    grade_arr = sorted(result_arr, reverse=True)
-    grade = grade_arr.index(result_arr[K-1]) + 1
-    if grade <= N//10 :
-        result = 'A+'
-    elif grade <= (N//10)*2   :
-        result = 'A0'
-    elif grade <= (N//10)*3 :
-        result = 'A-'
-    elif grade <= (N//10)*4 :
-        result = 'B+'
-    elif grade <= (N//10)*5 :
-        result = 'B0'
-    elif grade <= (N//10)*6 :
-        result = 'B-'
-    elif grade <= (N//10)*7 :
-        result = 'C+'
-    elif grade <= (N//10)*8 :
-        result = 'C0'
-    elif grade <= (N//10)*9 :
-        result = 'C-'
-    else :
-        result = 'D0'
-    print(f'#{tc} {result}')
