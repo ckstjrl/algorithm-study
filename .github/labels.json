@@ -1,52 +1,57 @@
 [
     {
         "name": "⚙ Setting",
-        "color": "DADDE4",
+        "color": "A8DADC",
         "description": "개발 환경 세팅"
     },
     {
-        "name": "✨ D1/SWEA",
-        "color": "57498F",
-        "description": "SWEA D1 문제 풀이"
+        "name": "✨ D1",
+        "color": "F6BD60",
+        "description": "D1 문제 풀이"
     },
     {
-        "name": "🌏 D2/SWEA",
-        "color": "1396E5",
-        "description": "SWEA D2 문제 풀이"
+        "name": "🌏 D2",
+        "color": "E5989B",
+        "description": "D2 문제 풀이"
     },
     {
-        "name": "🔥 D3/SWEA",
-        "color": "C7C4FF",
-        "description": "SWEA D3 문제 풀이"
+        "name": "🔥 D3",
+        "color": "B5E48C",
+        "description": "D3 문제 풀이"
     },
     {
         "name": "🎨 BOJ",
-        "color": "FFF8E7",
+        "color": "A2D2FF",
         "description": "BOJ 문제 풀이"
     },
     {
-        "name": "💻 Python",
-        "color": "FFDAB9",
+        "name": "🎨 PGM",
+        "color": "FFB4A2",
+        "description": "Programmers 문제 풀이"
+    },
+    {
+        "name": "🐍 Python",
+        "color": "CDB4DB",
         "description": "Python 사용"
     },
     {
         "name": "🐞 C/C++",
-        "color": "FF1414",
+        "color": "FFD6A5",
         "description": "C/C++ 사용"
     },
     {
         "name": "📃 JAVA",
-        "color": "2F2C2C", 
+        "color": "90CAF9", 
         "description": "JAVA 사용"
     },
     {
         "name": "🙋‍♂️ Question",
-        "color": "2DB400", 
+        "color": "D7E3FC", 
         "description": "질문 있어요"
     },
     {
         "name": "🗑️ Deprecated",
-        "color": "F5FFFA",
+        "color": "B9FBC0",
         "description": "이제 더 이상 필요 없어요"
     }
 ]
