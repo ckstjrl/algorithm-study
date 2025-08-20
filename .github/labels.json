@@ -28,6 +28,11 @@
         "name": "💻 PGM",
         "color": "FFB4A2",
         "description": "Programmers 문제 풀이"
+    },    
+    {
+        "name": "💙 SWEA",
+        "color": "FDE2E4",
+        "description": "SWEA 문제 풀이"
     },
     {
         "name": "🐍 Python",
