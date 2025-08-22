@@ -23,6 +23,30 @@
 # 각 테스트 케이스에 대해서, 입력으로 주어진 정수 배열에 함수를 수행한 결과를 출력한다. 
 # 만약, 에러가 발생한 경우에는 error를 출력한다.
 
+T = int(input())
+
+reverse = False
+left = 0
+right = 0 
+
+def R(arr):
+    global reverse
+    reverse = not reverse
+    return arr
+
+
+def D(arr):
+    # 앞에서 버릴지 뒤에서 버릴지는 '뒤집힘 상태'에 따라 결정
+    global left, right, reverse
+    if left >= right:
+        return 'error'
+    if not reverse:
+        left += 1     
+    else:
+        right -= 1     
+    return arr
+
+
 for _ in range(1, T+1):
     p = input()
     n = int(input())
@@ -44,8 +68,7 @@ for _ in range(1, T+1):
                 break
 
     if error:
-        continue # 에러 출력 후 나머지 처리(슬라이스/뒤집기/정상 출력)를 스킵해서, 
-        # 한 케이스당 출력이 정확히 한 줄만 나오도록 보장
+        continue
 
     result = arr[left:right]
     if reverse:
