@@ -5,7 +5,7 @@ for test_case in range(1, 1+T):
     charge = []
     for i in money:
         a = N//i  # 필요한 화폐 개수
-        charge.append(a)
+        charge.append(a) # 리스트에 추가
         N = N - a * i  # 처리하고 남은 돈
     print(f'#{test_case}')
     print(*charge)
