@@ -19,7 +19,7 @@ for t in arr:     #
 
 a = [ [v, k] for k,v in cnt.items()]
 a.sort(reverse=True)
-if len(arr) > 1 and a[0][0] == a[1][0]:
+if len(a) > 1 and a[0][0] == a[1][0]:
     print('?')
 else:
     print(a[0][1].upper())
