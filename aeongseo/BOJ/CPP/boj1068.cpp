@@ -40,7 +40,7 @@ int main() {
 				}
 			}
 
-			if (isleaf) cnt++;  // 리프 ㄴ노드가 맞으면 카운트 증가
+			if (isleaf) cnt++;  // 리프 노드가 맞으면 카운트 증가
 		}
 	}
 
