@@ -27,6 +27,7 @@ for i in range(0, 5): # 다섯 참가자 점수 합산을 위한 for문
     if grade > score:
         score = grade
         winner = i + 1 # 높은 점수 요리사 순서 출력
-print(winner, score)
+
+print(winner, score) # 정답 출력 
 
 
