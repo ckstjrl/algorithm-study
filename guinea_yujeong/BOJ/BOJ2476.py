@@ -23,17 +23,18 @@ N(2 ≤ N ≤ 1,000)명이 주사위 게임에 참여하였을 때, 가장 많�
 T = int(input())
 money = 0
 
-for i in range(T):
+for _ in range(T): # 주사위 개수만큼 for 문 
     a, b, c = map(int, input().split())  # 주사위 눈 
-    if a == b == c :
+
+    if a == b == c :  # 같은 눈이 3개 일때
         money = max(money, 10000 + a * 1000)
-    elif a == b : 
+    elif a == b :  # 같은 눈이 2개 일때
         money = max(money, 1000 + a * 100)
     elif a == c : 
         money = max(money, 1000 + a * 100)
     elif b == c : 
-        money = max(money, 1000 + a * 100)
-    else :
+        money = max(money, 1000 + b * 100)
+    else :    
         money = max(money, 100 * max(a, b, c))
 
 print(money)
