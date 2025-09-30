@@ -9,14 +9,12 @@ high_A = ''
 
 for i in range(len(A)):
     if A[i] == '6':
-        # 최솟값: 6을 5로
-        low_A += '5'
+        low_A += '5'  # 최솟값: 6을 5로
     else:
         low_A += A[i]
     
     if A[i] == '5':
-        # 최댓값: 5를 6으로
-        high_A += '6'
+        high_A += '6'  # 최댓값: 5를 6으로
     else:
         high_A += A[i]
 
