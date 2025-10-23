@@ -1,0 +1,56 @@
+/*
+BOJ1946. 신입 사원
+[문제]
+언제나 최고만을 지향하는 굴지의 대기업 진영 주식회사가 신규 사원 채용을 실시한다. 인재 선발 시험은 1차 서류심사와 2차 면접시험으로 이루어진다. 최고만을 지향한다는 기업의 이념에 따라 그들은 최고의 인재들만을 사원으로 선발하고 싶어 한다.
+그래서 진영 주식회사는, 다른 모든 지원자와 비교했을 때 서류심사 성적과 면접시험 성적 중 적어도 하나가 다른 지원자보다 떨어지지 않는 자만 선발한다는 원칙을 세웠다.
+즉, 어떤 지원자 A의 성적이 다른 어떤 지원자 B의 성적에 비해 서류 심사 결과와 면접 성적이 모두 떨어진다면 A는 결코 선발되지 않는다.
+이러한 조건을 만족시키면서, 진영 주식회사가 이번 신규 사원 채용에서 선발할 수 있는 신입사원의 최대 인원수를 구하는 프로그램을 작성하시오.
+
+[입력]
+첫째 줄에는 테스트 케이스의 개수 T(1 ≤ T ≤ 20)가 주어진다.
+각 테스트 케이스의 첫째 줄에 지원자의 숫자 N(1 ≤ N ≤ 100,000)이 주어진다.
+둘째 줄부터 N개 줄에는 각각의 지원자의 서류심사 성적, 면접 성적의 순위가 공백을 사이에 두고 한 줄에 주어진다. 두 성적 순위는 모두 1위부터 N위까지 동석차 없이 결정된다고 가정한다.
+
+[출력]
+각 테스트 케이스에 대해서 진영 주식회사가 선발할 수 있는 신입사원의 최대 인원수를 한 줄에 하나씩 출력한다.
+*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// 선발 가능한 신입사원 수를 계산하는 함수
+int countNewEmployees(vector<pair<int, int>>& scores, int N) {
+    sort(scores.begin(), scores.end());  // 서류 순위 기준 오름차순 정렬
+
+    int count = 1;  // 정렬 후 첫 번째 지원자는 서류 순위 1등이므로 무조건 합격
+    int bestInterview = scores[0].second;  // 현재까지 본 사람 중 최고 면접 순위를 저장
+
+    for (int i = 1; i < scores.size(); i++) {
+        if (scores[i].second < bestInterview) { // 면접 순위가 현재 최고 면접 순위보다 더 높다면
+            count++;  // 합격자 수 count
+            bestInterview = scores[i].second;  // 새로운 최고 면접 순위 갱신
+        }
+    }
+    return count;  // 선발 가능한 최대 신입사원 수 반환
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T, N;
+    cin >> T;  // 테스트 케이스 개수 T 입력 받기
+
+    for(int tc = 1; tc < T + 1; tc++) {
+        cin >> N;  // 지원자의 수 N 입력 받기
+        vector<pair<int, int>> scores(N);
+        for (int i = 0; i < N; i++) {
+            cin >> scores[i].first >> scores[i].second;  // 각 지원자의 (서류, 면접) 성적 순위 입력 받기
+        }
+
+        cout << countNewEmployees(scores, N) << '\n';  // 선발 가능한 신입사원 수를 구해서 출력
+    }
+    return 0;
+}
