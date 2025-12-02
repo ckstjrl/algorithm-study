@@ -1,5 +1,18 @@
 import sys
 input = sys.stdin.readline
+N = int(input())
+arr = []
+for _ in range(N):
+    a = input().strip()
+    x = len(a)  # 문자열 길이
+    y = 0  # 문자열 내 숫자 합
+    for i in a:
+        if i.isdecimal():
+            y = y + int(i)
+    arr.append((x, y, a))
+arr.sort()  # 정렬 (길이 -> 숫자 합 -> 사전순)
+for i in range(N):
+    print(arr[i][2])
 letter_to_number = {'A': 11, 'B': 12, 'C': 13, 'D': 14, 'E': 15, 'F': 16, 'G': 17, 'H': 18, 'I': 19, 'J': 20, 'K': 21,
                     'L': 22, 'M': 23, 'N': 24, 'O': 25,'P': 26, 'Q': 27, 'R': 28, 'S': 29, 'T': 30, 'U': 31, 'V': 32,
                     'W': 33, 'X': 34, 'Y': 35, 'Z': 36}
