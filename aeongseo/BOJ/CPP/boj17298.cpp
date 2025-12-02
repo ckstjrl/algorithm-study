@@ -14,6 +14,9 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
 	int N;
 	cin >> N;
 	vector<int> num(N, 0);
@@ -24,11 +27,6 @@ int main() {
 	stack<int> s; // 비교 스택
 	stack<int> ans; // 정답 스택
 	for (int i = N - 1; i >= 0; i--) {
-		if (s.empty()) { // 스택이 비었으면 정답에 -1 저장, 비교에 현재값 저장
-			ans.push(-1);
-			s.push(num[i]);
-			continue;
-		}
 		while (1) { // 비지 않았다면 과정 스택 순회
 			if (s.empty()) { // 스택 비었으면 정답에 -1 저장, 비교에 현재값 저장
 				ans.push(-1);
